@@ -1,11 +1,11 @@
-import locate_text
+import imgToText
 
 
 def pipeline(frame, coordinate):
     print('received frame of size', len(frame), 'and coordinates:', coordinate)
 
     # Extract the text at the target location
-    extracted_image = locate_text.locate_text(frame, coordinate)
+    print(imgToText.detect_text_swagger(frame))
 
     # Perform OCR
 

@@ -5,3 +5,4 @@ deepl
 playsound
 google-cloud-texttospeech
 Pillow
+google-cloud-vision

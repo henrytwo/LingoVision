@@ -14,6 +14,9 @@ def detect_text(path):
     with io.open(os.path.realpath(path), 'rb') as image_file:
         content = image_file.read()
 
+    return detect_text_swagger(content)
+
+def detect_text_swagger(content):
     image = vision.Image(content=content)
 
     response = client.text_detection(image=image)
