@@ -9,7 +9,6 @@ def translateText(untranslated, userLanguage):
         key = f.readlines()
 
     key = key[0]
-    print(key)
     translated = ""
 
     auth_key = key  # Replace with your key
