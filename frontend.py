@@ -9,7 +9,7 @@ import io
 
 MARKER_SIZE = 20  # Diameter in pixels of the gaze marker
 MARKER_COLOR = (0, 250, 50)  # Colour of the gaze marker
-SCALE = 1.15
+SCALE = 1.4
 
 class Interface(QtWidgets.QWidget):
     ''' Class for receiving and displaying the video stream '''

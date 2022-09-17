@@ -8,14 +8,29 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "key.json"
 client = vision.ImageAnnotatorClient()
 
 
+def dist(a, b) :
+    return (a[0] - b[0])**2 + (a[1] - b[1])**2
+
+def pt_to_rect(pt, rect):
+    shortest_dist = float('inf')
+    
+    for i in range(4) :
+        shortest_dist = min(shortest_dist, dist(pt, rect[i]))
+    
+    return shortest_dist
+
+
 def detect_box(image, x, y):
     response = client.document_text_detection(image=image)
     texts = response.full_text_annotation
 
+    exp = 10
     boxes = []
     targetted_box = [[0, 0], [0, 0], [0, 0], [0, 0]]
 
     foundBox = False
+    shortest_box = []
+    shortest_dist = float('inf')
 
     for page in texts.pages:
         for block in page.blocks:
@@ -25,6 +40,8 @@ def detect_box(image, x, y):
 
                 for vertex in paragraph.bounding_box.vertices:
                     bounding.append([vertex.x, vertex.y])
+                
+                bounding = [[bounding[0][0]-exp, bounding[0][1]-exp], [bounding[1][0]+exp, bounding[1][1]-exp], [bounding[2][0]+exp, bounding[2][1]+exp], [bounding[3][0]-exp, bounding[3][1]+exp]]
 
                 x1 = min([bounding[0][0], bounding[1][0], bounding[2][0], bounding[3][0]])
                 x2 = max([bounding[0][0], bounding[1][0], bounding[2][0], bounding[3][0]])
@@ -36,6 +53,18 @@ def detect_box(image, x, y):
                     foundBox = True
 
                 boxes.append(bounding)
+
+
+                dist = pt_to_rect([x, y], bounding)
+
+                if dist < shortest_dist :
+                    shortest_dist = dist
+                    shortest_box = bounding
+
+
+    if not foundBox :
+        return boxes, shortest_box
+
 
     return boxes, targetted_box
 

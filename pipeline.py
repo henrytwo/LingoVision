@@ -7,7 +7,7 @@ import threading
 
 def pipeline(frame, coordinate, set_current_frame):
     def runner():
-        language = 'ZH'
+        language = 'ZH' #'EN-US'
 
         print('received frame of size', len(frame), 'and coordinates:', coordinate)
 
