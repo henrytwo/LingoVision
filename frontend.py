@@ -9,7 +9,7 @@ import io
 
 MARKER_SIZE = 20  # Diameter in pixels of the gaze marker
 MARKER_COLOR = (0, 250, 50)  # Colour of the gaze marker
-
+SCALE = 1.15
 
 class Interface(QtWidgets.QWidget):
     ''' Class for receiving and displaying the video stream '''
@@ -107,7 +107,7 @@ class Interface(QtWidgets.QWidget):
 
         width, height = image.size
 
-        image = image.resize((int(width / 1.15), int(height / 1.15)))
+        image = image.resize((int(width / SCALE), int(height / SCALE)))
 
         img_byte_arr = io.BytesIO()
         image.save(img_byte_arr, format='JPEG')
@@ -140,7 +140,7 @@ class Interface(QtWidgets.QWidget):
         painter = QtGui.QPainter(qt_img)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
         painter.setBrush(QtGui.QBrush(QtGui.QColor(*MARKER_COLOR), QtCore.Qt.SolidPattern))
-        painter.drawEllipse(QtCore.QRectF(coordinates[0] - MARKER_SIZE / 2,
-                                          coordinates[1] - MARKER_SIZE / 2,
+        painter.drawEllipse(QtCore.QRectF(int(coordinates[0] / SCALE) - MARKER_SIZE / 2,
+                                          int(coordinates[1] / SCALE) - MARKER_SIZE / 2,
                                           MARKER_SIZE, MARKER_SIZE))
         painter.end()

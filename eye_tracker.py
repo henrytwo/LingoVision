@@ -41,8 +41,6 @@ class EyeTracker:
         # Flags the frontend as not connected yet
         self.connected = False
 
-        self._gaze_coordinates = None
-
     def handle_video_stream(self, _gaze_timestamp, _frame_index, image_buf, _frame_timestamp):
         self.current_frame = image_buf
 
