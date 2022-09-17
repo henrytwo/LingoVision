@@ -24,12 +24,13 @@ def detect_box(image, x, y):
     response = client.document_text_detection(image=image)
     texts = response.full_text_annotation
 
-    exp = 10
+    exp = 10 #expand hitbox of bounded boxes
+
     boxes = []
     targetted_box = [[0, 0], [0, 0], [0, 0], [0, 0]]
 
     foundBox = False
-    shortest_box = []
+    shortest_box = [[0, 0], [0, 0], [0, 0], [0, 0]]
     shortest_dist = float('inf')
 
     for page in texts.pages:
@@ -57,7 +58,7 @@ def detect_box(image, x, y):
 
                 dist = pt_to_rect([x, y], bounding)
 
-                if dist < shortest_dist :
+                if dist < 150**2 and dist < shortest_dist :
                     shortest_dist = dist
                     shortest_box = bounding
 
