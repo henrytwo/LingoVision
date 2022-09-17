@@ -1,6 +1,6 @@
 adhawk
 PySide2
 opencv-python
-pip install --upgrade deepl
-pip install playsound
-pip install --upgrade google-cloud-texttospeech
+deepl
+playsound
+google-cloud-texttospeech
