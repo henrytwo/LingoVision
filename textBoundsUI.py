@@ -2,12 +2,10 @@ from pygame import *
 
 init()
 
-WIDTH = 1920  # 1200
-HEIGHT = 1080  # 675
-
-
 def textBoundDebug(img, boxes, targetted_box):
-    screen = display.set_mode([WIDTH, HEIGHT])
+    captureImg = image.load(img)
+
+    screen = display.set_mode([captureImg.get_width(), captureImg.get_height()])
     running = True
 
     while running:
@@ -15,8 +13,6 @@ def textBoundDebug(img, boxes, targetted_box):
             if e.type == QUIT:
                 running = False
 
-        captureImg = image.load(img)
-        captureImg = transform.scale(captureImg, (WIDTH, HEIGHT))
         screen.blit(captureImg, (0, 0))
 
         for box in boxes:
