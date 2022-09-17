@@ -1,6 +1,8 @@
 '''
 Display a gaze marker on the camera/scene video. Demonstrates how to receive frames from the camera, map gaze data onto
 a camera frame, and draw a gaze marker.
+
+Courtesy of: https://github.com/adhawkmicrosystems/python-sdk-examples/tree/master/camera_gaze
 '''
 
 import math
