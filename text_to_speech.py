@@ -1,15 +1,16 @@
 #LingoVision
-
+#import googletrans
+#print(googletrans.LANGUAGES)
 
 from gtts import gTTS
 
 import os
 
-langGazed = '' #language detected
+textGazed = '' #text detected
 
 myLang = '' #language translated to (your language)
 
-myAudio = gTTS(text = langGazed, lang = language, slow = False)
+myAudio = gTTS(text = textGazed, lang = language, slow = False)
 
 myAudio.save("") #mp3 file
 
