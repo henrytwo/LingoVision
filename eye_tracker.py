@@ -95,7 +95,7 @@ class EyeTracker:
 
             # Starts the tracker's camera so that video can be captured and sets self._handle_camera_start_response as
             # the callback. This function will be called once the api has finished starting the camera.
-            self._api.start_camera_capture(camera_index=0, resolution_index=adhawkapi.CameraResolution.MEDIUM,
+            self._api.start_camera_capture(camera_index=0, resolution_index=adhawkapi.CameraResolution.HIGH,
                                            correct_distortion=False, callback=self._handle_camera_start_response)
 
             # Starts a logging session which saves eye tracking signals. This can be very useful for troubleshooting
