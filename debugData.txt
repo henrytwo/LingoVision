@@ -1,0 +1,1255 @@
+[description: "Honey"
+bounding_poly {
+  vertices {
+    x: 415
+    y: 995
+  }
+  vertices {
+    x: 437
+    y: 970
+  }
+  vertices {
+    x: 443
+    y: 975
+  }
+  vertices {
+    x: 421
+    y: 1000
+  }
+}
+, description: "To"
+bounding_poly {
+  vertices {
+    x: 436
+    y: 970
+  }
+  vertices {
+    x: 447
+    y: 957
+  }
+  vertices {
+    x: 453
+    y: 962
+  }
+  vertices {
+    x: 442
+    y: 975
+  }
+}
+, description: "khardt"
+bounding_poly {
+  vertices {
+    x: 552
+    y: 279
+  }
+  vertices {
+    x: 577
+    y: 277
+  }
+  vertices {
+    x: 578
+    y: 284
+  }
+  vertices {
+    x: 553
+    y: 286
+  }
+}
+, description: "OPI"
+bounding_poly {
+  vertices {
+    x: 550
+    y: 764
+  }
+  vertices {
+    x: 572
+    y: 756
+  }
+  vertices {
+    x: 575
+    y: 767
+  }
+  vertices {
+    x: 554
+    y: 774
+  }
+}
+, description: "METROLINX"
+bounding_poly {
+  vertices {
+    x: 732
+    y: 167
+  }
+  vertices {
+    x: 815
+    y: 158
+  }
+  vertices {
+    x: 816
+    y: 171
+  }
+  vertices {
+    x: 733
+    y: 180
+  }
+}
+, description: "Students"
+bounding_poly {
+  vertices {
+    x: 709
+    y: 208
+  }
+  vertices {
+    x: 859
+    y: 192
+  }
+  vertices {
+    x: 863
+    y: 227
+  }
+  vertices {
+    x: 713
+    y: 243
+  }
+}
+, description: "get"
+bounding_poly {
+  vertices {
+    x: 867
+    y: 191
+  }
+  vertices {
+    x: 925
+    y: 185
+  }
+  vertices {
+    x: 928
+    y: 220
+  }
+  vertices {
+    x: 871
+    y: 226
+  }
+}
+, description: "40"
+bounding_poly {
+  vertices {
+    x: 931
+    y: 185
+  }
+  vertices {
+    x: 974
+    y: 180
+  }
+  vertices {
+    x: 977
+    y: 214
+  }
+  vertices {
+    x: 935
+    y: 219
+  }
+}
+, description: "%"
+bounding_poly {
+  vertices {
+    x: 976
+    y: 180
+  }
+  vertices {
+    x: 1006
+    y: 177
+  }
+  vertices {
+    x: 1009
+    y: 211
+  }
+  vertices {
+    x: 980
+    y: 214
+  }
+}
+, description: "off"
+bounding_poly {
+  vertices {
+    x: 1017
+    y: 175
+  }
+  vertices {
+    x: 1068
+    y: 170
+  }
+  vertices {
+    x: 1071
+    y: 204
+  }
+  vertices {
+    x: 1021
+    y: 210
+  }
+}
+, description: "GO"
+bounding_poly {
+  vertices {
+    x: 1075
+    y: 170
+  }
+  vertices {
+    x: 1129
+    y: 164
+  }
+  vertices {
+    x: 1132
+    y: 198
+  }
+  vertices {
+    x: 1079
+    y: 204
+  }
+}
+, description: "with"
+bounding_poly {
+  vertices {
+    x: 717
+    y: 254
+  }
+  vertices {
+    x: 789
+    y: 248
+  }
+  vertices {
+    x: 791
+    y: 278
+  }
+  vertices {
+    x: 719
+    y: 284
+  }
+}
+, description: "PRESTO"
+bounding_poly {
+  vertices {
+    x: 799
+    y: 247
+  }
+  vertices {
+    x: 935
+    y: 236
+  }
+  vertices {
+    x: 937
+    y: 266
+  }
+  vertices {
+    x: 801
+    y: 277
+  }
+}
+, description: "H"
+bounding_poly {
+  vertices {
+    x: 772
+    y: 536
+  }
+  vertices {
+    x: 772
+    y: 519
+  }
+  vertices {
+    x: 786
+    y: 519
+  }
+  vertices {
+    x: 786
+    y: 536
+  }
+}
+, description: "Between"
+bounding_poly {
+  vertices {
+    x: 836
+    y: 483
+  }
+  vertices {
+    x: 885
+    y: 479
+  }
+  vertices {
+    x: 886
+    y: 492
+  }
+  vertices {
+    x: 837
+    y: 496
+  }
+}
+, description: "tuition"
+bounding_poly {
+  vertices {
+    x: 889
+    y: 478
+  }
+  vertices {
+    x: 925
+    y: 475
+  }
+  vertices {
+    x: 926
+    y: 488
+  }
+  vertices {
+    x: 890
+    y: 491
+  }
+}
+, description: ","
+bounding_poly {
+  vertices {
+    x: 927
+    y: 475
+  }
+  vertices {
+    x: 929
+    y: 475
+  }
+  vertices {
+    x: 930
+    y: 487
+  }
+  vertices {
+    x: 928
+    y: 487
+  }
+}
+, description: "books"
+bounding_poly {
+  vertices {
+    x: 934
+    y: 474
+  }
+  vertices {
+    x: 969
+    y: 471
+  }
+  vertices {
+    x: 970
+    y: 484
+  }
+  vertices {
+    x: 935
+    y: 487
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 972
+    y: 471
+  }
+  vertices {
+    x: 994
+    y: 469
+  }
+  vertices {
+    x: 995
+    y: 482
+  }
+  vertices {
+    x: 973
+    y: 484
+  }
+}
+, description: "all"
+bounding_poly {
+  vertices {
+    x: 999
+    y: 469
+  }
+  vertices {
+    x: 1012
+    y: 468
+  }
+  vertices {
+    x: 1013
+    y: 480
+  }
+  vertices {
+    x: 1000
+    y: 481
+  }
+}
+, description: "-"
+bounding_poly {
+  vertices {
+    x: 1012
+    y: 468
+  }
+  vertices {
+    x: 1015
+    y: 468
+  }
+  vertices {
+    x: 1016
+    y: 480
+  }
+  vertices {
+    x: 1013
+    y: 480
+  }
+}
+, description: "around"
+bounding_poly {
+  vertices {
+    x: 1016
+    y: 467
+  }
+  vertices {
+    x: 1057
+    y: 463
+  }
+  vertices {
+    x: 1058
+    y: 476
+  }
+  vertices {
+    x: 1017
+    y: 480
+  }
+}
+, description: "student"
+bounding_poly {
+  vertices {
+    x: 1062
+    y: 463
+  }
+  vertices {
+    x: 1106
+    y: 459
+  }
+  vertices {
+    x: 1107
+    y: 472
+  }
+  vertices {
+    x: 1063
+    y: 476
+  }
+}
+, description: "life"
+bounding_poly {
+  vertices {
+    x: 1110
+    y: 459
+  }
+  vertices {
+    x: 1128
+    y: 457
+  }
+  vertices {
+    x: 1129
+    y: 469
+  }
+  vertices {
+    x: 1111
+    y: 471
+  }
+}
+, description: ","
+bounding_poly {
+  vertices {
+    x: 1127
+    y: 458
+  }
+  vertices {
+    x: 1131
+    y: 458
+  }
+  vertices {
+    x: 1132
+    y: 470
+  }
+  vertices {
+    x: 1128
+    y: 470
+  }
+}
+, description: "it\'s"
+bounding_poly {
+  vertices {
+    x: 1135
+    y: 457
+  }
+  vertices {
+    x: 1149
+    y: 456
+  }
+  vertices {
+    x: 1150
+    y: 468
+  }
+  vertices {
+    x: 1136
+    y: 469
+  }
+}
+, description: "a"
+bounding_poly {
+  vertices {
+    x: 837
+    y: 500
+  }
+  vertices {
+    x: 844
+    y: 499
+  }
+  vertices {
+    x: 845
+    y: 511
+  }
+  vertices {
+    x: 838
+    y: 512
+  }
+}
+, description: "no"
+bounding_poly {
+  vertices {
+    x: 846
+    y: 499
+  }
+  vertices {
+    x: 860
+    y: 498
+  }
+  vertices {
+    x: 861
+    y: 510
+  }
+  vertices {
+    x: 847
+    y: 511
+  }
+}
+, description: "-"
+bounding_poly {
+  vertices {
+    x: 860
+    y: 497
+  }
+  vertices {
+    x: 865
+    y: 497
+  }
+  vertices {
+    x: 866
+    y: 509
+  }
+  vertices {
+    x: 861
+    y: 509
+  }
+}
+, description: "brainer"
+bounding_poly {
+  vertices {
+    x: 865
+    y: 497
+  }
+  vertices {
+    x: 908
+    y: 493
+  }
+  vertices {
+    x: 909
+    y: 505
+  }
+  vertices {
+    x: 866
+    y: 509
+  }
+}
+, description: "to"
+bounding_poly {
+  vertices {
+    x: 910
+    y: 493
+  }
+  vertices {
+    x: 921
+    y: 492
+  }
+  vertices {
+    x: 922
+    y: 504
+  }
+  vertices {
+    x: 911
+    y: 505
+  }
+}
+, description: "take"
+bounding_poly {
+  vertices {
+    x: 924
+    y: 492
+  }
+  vertices {
+    x: 950
+    y: 490
+  }
+  vertices {
+    x: 951
+    y: 502
+  }
+  vertices {
+    x: 925
+    y: 504
+  }
+}
+, description: "GO"
+bounding_poly {
+  vertices {
+    x: 955
+    y: 489
+  }
+  vertices {
+    x: 974
+    y: 487
+  }
+  vertices {
+    x: 975
+    y: 499
+  }
+  vertices {
+    x: 956
+    y: 501
+  }
+}
+, description: "Transit"
+bounding_poly {
+  vertices {
+    x: 978
+    y: 487
+  }
+  vertices {
+    x: 1016
+    y: 484
+  }
+  vertices {
+    x: 1017
+    y: 497
+  }
+  vertices {
+    x: 979
+    y: 500
+  }
+}
+, description: "to"
+bounding_poly {
+  vertices {
+    x: 1019
+    y: 483
+  }
+  vertices {
+    x: 1030
+    y: 482
+  }
+  vertices {
+    x: 1031
+    y: 495
+  }
+  vertices {
+    x: 1020
+    y: 496
+  }
+}
+, description: "school"
+bounding_poly {
+  vertices {
+    x: 1035
+    y: 482
+  }
+  vertices {
+    x: 1073
+    y: 479
+  }
+  vertices {
+    x: 1074
+    y: 492
+  }
+  vertices {
+    x: 1036
+    y: 495
+  }
+}
+, description: "and"
+bounding_poly {
+  vertices {
+    x: 1076
+    y: 479
+  }
+  vertices {
+    x: 1098
+    y: 477
+  }
+  vertices {
+    x: 1099
+    y: 489
+  }
+  vertices {
+    x: 1077
+    y: 491
+  }
+}
+, description: "save"
+bounding_poly {
+  vertices {
+    x: 1102
+    y: 477
+  }
+  vertices {
+    x: 1129
+    y: 475
+  }
+  vertices {
+    x: 1130
+    y: 487
+  }
+  vertices {
+    x: 1103
+    y: 489
+  }
+}
+, description: "with"
+bounding_poly {
+  vertices {
+    x: 837
+    y: 516
+  }
+  vertices {
+    x: 862
+    y: 514
+  }
+  vertices {
+    x: 863
+    y: 527
+  }
+  vertices {
+    x: 838
+    y: 529
+  }
+}
+, description: "the"
+bounding_poly {
+  vertices {
+    x: 865
+    y: 514
+  }
+  vertices {
+    x: 884
+    y: 512
+  }
+  vertices {
+    x: 885
+    y: 524
+  }
+  vertices {
+    x: 866
+    y: 526
+  }
+}
+, description: "student"
+bounding_poly {
+  vertices {
+    x: 887
+    y: 512
+  }
+  vertices {
+    x: 933
+    y: 508
+  }
+  vertices {
+    x: 934
+    y: 521
+  }
+  vertices {
+    x: 888
+    y: 525
+  }
+}
+, description: "discount"
+bounding_poly {
+  vertices {
+    x: 935
+    y: 508
+  }
+  vertices {
+    x: 986
+    y: 504
+  }
+  vertices {
+    x: 987
+    y: 516
+  }
+  vertices {
+    x: 936
+    y: 520
+  }
+}
+, description: "when"
+bounding_poly {
+  vertices {
+    x: 988
+    y: 503
+  }
+  vertices {
+    x: 1020
+    y: 500
+  }
+  vertices {
+    x: 1021
+    y: 513
+  }
+  vertices {
+    x: 989
+    y: 516
+  }
+}
+, description: "you"
+bounding_poly {
+  vertices {
+    x: 1024
+    y: 500
+  }
+  vertices {
+    x: 1046
+    y: 498
+  }
+  vertices {
+    x: 1047
+    y: 511
+  }
+  vertices {
+    x: 1025
+    y: 513
+  }
+}
+, description: "use"
+bounding_poly {
+  vertices {
+    x: 1050
+    y: 498
+  }
+  vertices {
+    x: 1070
+    y: 496
+  }
+  vertices {
+    x: 1071
+    y: 508
+  }
+  vertices {
+    x: 1051
+    y: 510
+  }
+}
+, description: "PRESTO"
+bounding_poly {
+  vertices {
+    x: 1072
+    y: 496
+  }
+  vertices {
+    x: 1122
+    y: 492
+  }
+  vertices {
+    x: 1123
+    y: 504
+  }
+  vertices {
+    x: 1073
+    y: 508
+  }
+}
+, description: "#"
+bounding_poly {
+  vertices {
+    x: 966
+    y: 836
+  }
+  vertices {
+    x: 976
+    y: 836
+  }
+  vertices {
+    x: 976
+    y: 841
+  }
+  vertices {
+    x: 966
+    y: 841
+  }
+}
+, description: "!"
+bounding_poly {
+  vertices {
+    x: 1002
+    y: 835
+  }
+  vertices {
+    x: 1010
+    y: 835
+  }
+  vertices {
+    x: 1010
+    y: 843
+  }
+  vertices {
+    x: 1002
+    y: 843
+  }
+}
+, description: "P"
+bounding_poly {
+  vertices {
+    x: 1040
+    y: 838
+  }
+  vertices {
+    x: 1046
+    y: 838
+  }
+  vertices {
+    x: 1046
+    y: 843
+  }
+  vertices {
+    x: 1040
+    y: 843
+  }
+}
+, description: "HUCOUP"
+bounding_poly {
+  vertices {
+    x: 1051
+    y: 766
+  }
+  vertices {
+    x: 1188
+    y: 769
+  }
+  vertices {
+    x: 1188
+    y: 777
+  }
+  vertices {
+    x: 1051
+    y: 774
+  }
+}
+, description: "F"
+bounding_poly {
+  vertices {
+    x: 1060
+    y: 822
+  }
+  vertices {
+    x: 1069
+    y: 822
+  }
+  vertices {
+    x: 1069
+    y: 828
+  }
+  vertices {
+    x: 1060
+    y: 828
+  }
+}
+, description: "."
+bounding_poly {
+  vertices {
+    x: 1056
+    y: 860
+  }
+  vertices {
+    x: 1062
+    y: 860
+  }
+  vertices {
+    x: 1062
+    y: 864
+  }
+  vertices {
+    x: 1056
+    y: 864
+  }
+}
+, description: "F"
+bounding_poly {
+  vertices {
+    x: 1080
+    y: 844
+  }
+  vertices {
+    x: 1086
+    y: 844
+  }
+  vertices {
+    x: 1086
+    y: 848
+  }
+  vertices {
+    x: 1080
+    y: 848
+  }
+}
+, description: "Y"
+bounding_poly {
+  vertices {
+    x: 1097
+    y: 864
+  }
+  vertices {
+    x: 1103
+    y: 864
+  }
+  vertices {
+    x: 1103
+    y: 868
+  }
+  vertices {
+    x: 1097
+    y: 868
+  }
+}
+, description: "N"
+bounding_poly {
+  vertices {
+    x: 1120
+    y: 840
+  }
+  vertices {
+    x: 1125
+    y: 840
+  }
+  vertices {
+    x: 1125
+    y: 843
+  }
+  vertices {
+    x: 1120
+    y: 843
+  }
+}
+, description: "U"
+bounding_poly {
+  vertices {
+    x: 1135
+    y: 865
+  }
+  vertices {
+    x: 1142
+    y: 865
+  }
+  vertices {
+    x: 1142
+    y: 869
+  }
+  vertices {
+    x: 1135
+    y: 869
+  }
+}
+, description: "F"
+bounding_poly {
+  vertices {
+    x: 1159
+    y: 847
+  }
+  vertices {
+    x: 1166
+    y: 847
+  }
+  vertices {
+    x: 1166
+    y: 851
+  }
+  vertices {
+    x: 1159
+    y: 851
+  }
+}
+, description: "M"
+bounding_poly {
+  vertices {
+    x: 1199
+    y: 848
+  }
+  vertices {
+    x: 1206
+    y: 848
+  }
+  vertices {
+    x: 1206
+    y: 853
+  }
+  vertices {
+    x: 1199
+    y: 853
+  }
+}
+, description: "0"
+bounding_poly {
+  vertices {
+    x: 1219
+    y: 869
+  }
+  vertices {
+    x: 1228
+    y: 869
+  }
+  vertices {
+    x: 1228
+    y: 874
+  }
+  vertices {
+    x: 1219
+    y: 874
+  }
+}
+, description: "6"
+bounding_poly {
+  vertices {
+    x: 1239
+    y: 850
+  }
+  vertices {
+    x: 1245
+    y: 850
+  }
+  vertices {
+    x: 1245
+    y: 855
+  }
+  vertices {
+    x: 1239
+    y: 855
+  }
+}
+, description: "WATER"
+bounding_poly {
+  vertices {
+    x: 1572
+    y: 600
+  }
+  vertices {
+    x: 1614
+    y: 610
+  }
+  vertices {
+    x: 1611
+    y: 622
+  }
+  vertices {
+    x: 1569
+    y: 613
+  }
+}
+, description: "LOOFOOD"
+bounding_poly {
+  vertices {
+    x: 1562
+    y: 607
+  }
+  vertices {
+    x: 1612
+    y: 621
+  }
+  vertices {
+    x: 1609
+    y: 633
+  }
+  vertices {
+    x: 1559
+    y: 620
+  }
+}
+, description: "2MPUS"
+bounding_poly {
+  vertices {
+    x: 1572
+    y: 732
+  }
+  vertices {
+    x: 1597
+    y: 742
+  }
+  vertices {
+    x: 1594
+    y: 749
+  }
+  vertices {
+    x: 1569
+    y: 739
+  }
+}
+, description: "CARU"
+bounding_poly {
+  vertices {
+    x: 1660
+    y: 693
+  }
+  vertices {
+    x: 1688
+    y: 688
+  }
+  vertices {
+    x: 1690
+    y: 695
+  }
+  vertices {
+    x: 1661
+    y: 701
+  }
+}
+, description: "FRE"
+bounding_poly {
+  vertices {
+    x: 1657
+    y: 703
+  }
+  vertices {
+    x: 1686
+    y: 698
+  }
+  vertices {
+    x: 1688
+    y: 709
+  }
+  vertices {
+    x: 1659
+    y: 714
+  }
+}
+, description: "crumb"
+bounding_poly {
+  vertices {
+    x: 1816
+    y: 870
+  }
+  vertices {
+    x: 1912
+    y: 848
+  }
+  vertices {
+    x: 1919
+    y: 874
+  }
+  vertices {
+    x: 1822
+    y: 896
+  }
+}
+]
