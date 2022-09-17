@@ -1,3 +1,4 @@
 adhawk
 PySide2
 opencv-python
+pip install --upgrade deepl
