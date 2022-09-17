@@ -17,6 +17,7 @@ def main():
     # be sent to it.
     ui = frontend.Interface()
 
+    # Okay this is so sketchy but it's literally 5:21 am okay
     def capture_image():
         print(tracker.current_frame, tracker.gaze_coordinates)
 
