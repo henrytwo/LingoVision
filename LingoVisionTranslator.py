@@ -5,9 +5,14 @@ import deepl
 
 def translateText(untranslated, userLanguage):
 
+    with open('TranslatorKey.txt') as f:
+        key = f.readlines()
+
+    key = key[0]
+    print(key)
     translated = ""
 
-    auth_key = "d0ccf683-2bc8-7cef-0a12-c0496b1753fc:fx"  # Replace with your key
+    auth_key = key  # Replace with your key
     translator = deepl.Translator(auth_key)
 
     
@@ -18,4 +23,4 @@ def translateText(untranslated, userLanguage):
     return translated
 
 
-print(translateText("je", "EN-US"))
+print(translateText("bonjour, jemappelle john", "EN-US"))
