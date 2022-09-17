@@ -15,7 +15,7 @@ def pipeline(frame, coordinate, set_current_frame):
     print('Original:', text)
 
     # Overlay boxes to show where OCR is being executed, along with the target frame
-    boxed_frame = frame #textBoundsUI.swaggertextBoundDebug(frame, boxes, targeted_box)
+    boxed_frame = textBoundsUI.swaggertextBoundDebug(frame, boxes, targeted_box)
 
     # Freezeframe that is used for analysis
     set_current_frame(boxed_frame, coordinate)

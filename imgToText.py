@@ -81,8 +81,8 @@ def detect_text_swagger(content, coordinate):
     texts = response.text_annotations
     texts = texts[1:]
 
-    with open('debugData.txt', 'w') as f:
-        f.write(str(texts))
+    #with open('debugData.txt', 'w') as f:
+    #    f.write(str(texts))
 
     outputText = []
 
