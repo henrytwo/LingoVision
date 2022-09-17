@@ -21,8 +21,7 @@ def main():
     # TODO: Add alternate ways to trigger this capture_image function, but that's for later...
     def capture_image():
         # Trigger the main pipeline
-        ui.set_current_frame(tracker.current_frame, tracker.gaze_coordinates)
-        pipeline.pipeline(tracker.current_frame, tracker.gaze_coordinates)
+        pipeline.pipeline(tracker.current_frame, tracker.gaze_coordinates, ui.set_current_frame)
 
     ui.set_capture_image(capture_image)
 
