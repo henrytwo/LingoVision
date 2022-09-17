@@ -2,7 +2,7 @@ adhawk
 PySide2
 opencv-python
 deepl
-playsound
+playsound==1.2.2
 google-cloud-texttospeech
 Pillow
 google-cloud-vision

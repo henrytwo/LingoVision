@@ -30,10 +30,9 @@ def detect_text_swagger(content):
 
         print('bounds: {}'.format(','.join(vertices)))
     '''
-    
 
-    return ('\n"{}"'.format(texts[0].description)).strip()
-    
+    return texts[0].description
+
     if response.error.message:
         raise Exception(
             '{}\nFor more info on error messages, check: '

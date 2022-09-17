@@ -9,6 +9,7 @@ def translateText(untranslated, userLanguage):
         key = f.readlines()
 
     key = key[0]
+    #print(key)
     translated = ""
 
     auth_key = key  # Replace with your key
@@ -21,5 +22,5 @@ def translateText(untranslated, userLanguage):
 
     return translated
 
-
-print(translateText("bonjour, jemappelle john", "EN-US"))
+if __name__ == '__main__':
+    print(translateText("bonjour, jemappelle john", "EN-US"))

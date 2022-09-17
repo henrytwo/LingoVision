@@ -32,6 +32,7 @@ def textToAudioFile(translatedText, userLanguage):
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
 
+    os.remove('output.mp3')
 
     # The response's audio_content is binary.
     with open("output.mp3", "wb") as out:
@@ -42,5 +43,5 @@ def textToSpeech(translatedText, userLanguage):
     textToAudioFile(translatedText, userLanguage)
     playsound('output.mp3')
 
-
-textToSpeech("jemappelle lorangutan", "ZH")
+if __name__ == '__main__':
+    textToSpeech("jemappelle lorangutan", "ZH")
