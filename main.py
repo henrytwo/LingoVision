@@ -3,7 +3,7 @@
 from PySide2 import QtCore, QtGui, QtWidgets
 import sys
 import frontend
-import adhawkapi
+import pipeline
 import eye_tracker
 
 def main():
@@ -18,8 +18,10 @@ def main():
     ui = frontend.Interface()
 
     # Okay this is so sketchy but it's literally 5:21 am okay
+    # TODO: Add alternate ways to trigger this capture_image function, but that's for later...
     def capture_image():
-        print(tracker.current_frame, tracker.gaze_coordinates)
+        # Trigger the main pipeline
+        pipeline.pipeline(tracker.current_frame, tracker.gaze_coordinates)
 
         ui.set_current_frame(tracker.current_frame, tracker.gaze_coordinates)
 
