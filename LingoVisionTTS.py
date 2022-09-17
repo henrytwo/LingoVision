@@ -32,7 +32,8 @@ def textToAudioFile(translatedText, userLanguage):
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
 
-    os.remove('output.mp3')
+    if os.path.exists('output.mp3'):
+        os.remove('output.mp3')
 
     # The response's audio_content is binary.
     with open("output.mp3", "wb") as out:
