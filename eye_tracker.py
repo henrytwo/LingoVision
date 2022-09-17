@@ -47,7 +47,8 @@ class EyeTracker:
         self.current_frame = image_buf
 
         # Update the UI
-        self.handle_external_video_stream(image_buf, self.gaze_coordinates)
+        if self.handle_external_video_stream:
+            self.handle_external_video_stream(image_buf, self.gaze_coordinates)
 
     def handle_gaze_in_image_stream(self, _timestamp, gaze_img_x, gaze_img_y, *_args):
         # Updates the gaze marker coordinates with new gaze data. It is possible to receive NaN from the api, so we

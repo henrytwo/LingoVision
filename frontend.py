@@ -21,20 +21,35 @@ class Interface(QtWidgets.QWidget):
         self.text_label.setAlignment(QtCore.Qt.AlignCenter)
         vbox.addWidget(self.text_label)
 
-        # Qt code to create a label that can hold an image. We will use this label to hold successive images from the
-        # video stream.
+        title_hbox = QtWidgets.QHBoxLayout()
         self.live_text_label = QtWidgets.QLabel('Live Feed:')
         self.live_text_label.setAlignment(QtCore.Qt.AlignLeft)
-        vbox.addWidget(self.live_text_label)
-        self.image_label = QtWidgets.QLabel(self)
-        vbox.addWidget(self.image_label)
-
-        # Full frame that we're analyzing
+        title_hbox.addWidget(self.live_text_label)
         self.full_frame_text_label = QtWidgets.QLabel('Captured Frame:')
         self.full_frame_text_label.setAlignment(QtCore.Qt.AlignLeft)
-        vbox.addWidget(self.full_frame_text_label)
+        title_hbox.addWidget(self.full_frame_text_label)
+
+        vbox.addLayout(title_hbox)
+
+        stream_hbox = QtWidgets.QHBoxLayout()
+
+        # Qt code to create a label that can hold an image. We will use this label to hold successive images from the
+        # video stream.
+        self.image_label = QtWidgets.QLabel(self)
+        stream_hbox.addWidget(self.image_label)
+
+        # Full frame that we're analyzing
         self.full_frame_label = QtWidgets.QLabel(self)
-        vbox.addWidget(self.full_frame_label)
+        stream_hbox.addWidget(self.full_frame_label)
+
+        vbox.addLayout(stream_hbox)
+
+        # Clipped frame we perform OCR on
+        self.clipped_frame_text_label = QtWidgets.QLabel('Cropped Frame:')
+        self.clipped_frame_text_label.setAlignment(QtCore.Qt.AlignLeft)
+        vbox.addWidget(self.full_frame_text_label)
+        self.clipped_frame_label = QtWidgets.QLabel(self)
+        vbox.addWidget(self.clipped_frame_label)
 
         self.setLayout(vbox)
 
@@ -48,9 +63,6 @@ class Interface(QtWidgets.QWidget):
         # in known positions
         self.calibration_shortcut = QtWidgets.QShortcut(QtGui.QKeySequence('c'), self)
         self.calibration_shortcut.activated.connect(self.calibrate)
-
-        # Initialize the gaze coordinates to dummy values for now
-        self._gaze_coordinates = (0, 0)
 
         # Set this later
         self.tracker = None
@@ -66,10 +78,18 @@ class Interface(QtWidgets.QWidget):
         qt_img.loadFromData(frame, 'JPEG')
 
         # Draws the gaze marker on the new frame
-        self._draw_gaze_marker(qt_img)
+        self._draw_gaze_marker(qt_img, coordinates)
 
         # Sets the new image
         self.full_frame_label.setPixmap(qt_img)
+
+    def set_clipped_frame(self, frame):
+        # Create a new Qt pixmap and load the frame's data into it
+        qt_img = QtGui.QPixmap()
+        qt_img.loadFromData(frame, 'JPEG')
+
+        # Sets the new image
+        self.clipped_frame_label.setPixmap(qt_img)
 
     def closeEvent(self, event):
         '''
@@ -78,6 +98,7 @@ class Interface(QtWidgets.QWidget):
         '''
 
         self.tracker.shutdown()
+        exit()
         super().closeEvent(event)
 
     @property
@@ -104,23 +125,21 @@ class Interface(QtWidgets.QWidget):
             # Set the image label's size to the frame's size
             self.image_label.resize(size[0], size[1])
 
-        self._gaze_coordinates = coordinates
-
         # Draws the gaze marker on the new frame
-        self._draw_gaze_marker(qt_img)
+        self._draw_gaze_marker(qt_img, coordinates)
 
         # Sets the new image
         self.image_label.setPixmap(qt_img)
 
-    def _draw_gaze_marker(self, qt_img):
-        if math.isnan(self._gaze_coordinates[0]) or math.isnan(self._gaze_coordinates[1]):
+    def _draw_gaze_marker(self, qt_img, coordinates):
+        if math.isnan(coordinates[0]) or math.isnan(coordinates[1]):
             return
 
         # Draws the gaze marker on the given frame image
         painter = QtGui.QPainter(qt_img)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
         painter.setBrush(QtGui.QBrush(QtGui.QColor(*MARKER_COLOR), QtCore.Qt.SolidPattern))
-        painter.drawEllipse(QtCore.QRectF(self._gaze_coordinates[0] - MARKER_SIZE / 2,
-                                          self._gaze_coordinates[1] - MARKER_SIZE / 2,
+        painter.drawEllipse(QtCore.QRectF(coordinates[0] - MARKER_SIZE / 2,
+                                          coordinates[1] - MARKER_SIZE / 2,
                                           MARKER_SIZE, MARKER_SIZE))
         painter.end()
