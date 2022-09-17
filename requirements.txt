@@ -4,3 +4,4 @@ opencv-python
 deepl
 playsound
 google-cloud-texttospeech
+Pillow

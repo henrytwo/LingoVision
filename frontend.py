@@ -4,9 +4,12 @@ from PySide2 import QtCore, QtGui, QtWidgets
 import adhawkapi
 import eye_tracker
 import math
+from PIL import Image
+import io
 
 MARKER_SIZE = 20  # Diameter in pixels of the gaze marker
 MARKER_COLOR = (0, 250, 50)  # Colour of the gaze marker
+
 
 class Interface(QtWidgets.QWidget):
     ''' Class for receiving and displaying the video stream '''
@@ -44,13 +47,6 @@ class Interface(QtWidgets.QWidget):
 
         vbox.addLayout(stream_hbox)
 
-        # Clipped frame we perform OCR on
-        self.clipped_frame_text_label = QtWidgets.QLabel('Cropped Frame:')
-        self.clipped_frame_text_label.setAlignment(QtCore.Qt.AlignLeft)
-        vbox.addWidget(self.full_frame_text_label)
-        self.clipped_frame_label = QtWidgets.QLabel(self)
-        vbox.addWidget(self.clipped_frame_label)
-
         self.setLayout(vbox)
 
         # A Quick Start tunes the scan range and frequency to best suit the user's eye and face shape, resulting in
@@ -75,21 +71,13 @@ class Interface(QtWidgets.QWidget):
     def set_current_frame(self, frame, coordinates):
         # Create a new Qt pixmap and load the frame's data into it
         qt_img = QtGui.QPixmap()
-        qt_img.loadFromData(frame, 'JPEG')
+        qt_img.loadFromData(self.downsize_jpg(frame), 'JPEG')
 
         # Draws the gaze marker on the new frame
         self._draw_gaze_marker(qt_img, coordinates)
 
         # Sets the new image
         self.full_frame_label.setPixmap(qt_img)
-
-    def set_clipped_frame(self, frame):
-        # Create a new Qt pixmap and load the frame's data into it
-        qt_img = QtGui.QPixmap()
-        qt_img.loadFromData(frame, 'JPEG')
-
-        # Sets the new image
-        self.clipped_frame_label.setPixmap(qt_img)
 
     def closeEvent(self, event):
         '''
@@ -114,10 +102,23 @@ class Interface(QtWidgets.QWidget):
         ''' Function to allow the main loop to invoke a Calibration '''
         self.tracker.calibrate()
 
+    def downsize_jpg(self, jpg):
+        image = Image.open(io.BytesIO(jpg))
+
+        width, height = image.size
+
+        image = image.resize((int(width / 1.15), int(height / 1.15)))
+
+        img_byte_arr = io.BytesIO()
+        image.save(img_byte_arr, format='JPEG')
+        img_byte_arr = img_byte_arr.getvalue()
+
+        return img_byte_arr
+
     def handle_video_stream(self, image_buf, coordinates):
         # Create a new Qt pixmap and load the frame's data into it
         qt_img = QtGui.QPixmap()
-        qt_img.loadFromData(image_buf, 'JPEG')
+        qt_img.loadFromData(self.downsize_jpg(image_buf), 'JPEG')
 
         # Get the image's size. If self._frame_size has not yet been initialized, we set its values to the frame size.
         size = qt_img.size().toTuple()

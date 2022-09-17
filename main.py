@@ -25,9 +25,6 @@ def main():
 
         ui.set_current_frame(tracker.current_frame, tracker.gaze_coordinates)
 
-        # TODO: Move this somewhere else
-        ui.set_clipped_frame(tracker.current_frame)
-
     ui.set_capture_image(capture_image)
 
     ui.tracker = tracker
