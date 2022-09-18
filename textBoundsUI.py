@@ -18,10 +18,12 @@ def textBoundDebug(img, boxes, targetted_box):
         screen.blit(captureImg, (0, 0))
 
         for box in boxes:
-            draw.polygon(screen, (0, 255, 0), box, 2)
+            if box:
+                draw.polygon(screen, (0, 255, 0), box, 2)
             #draw.polygon(screen, (0, 0, 255), [[box[0][0]-exp, box[0][1]-exp], [box[1][0]+exp, box[1][1]-exp], [box[2][0]+exp, box[2][1]+exp], [box[3][0]-exp, box[3][1]+exp]], 2)
 
-        draw.polygon(screen, (255, 0, 0), targetted_box, 2)
+        if targetted_box:
+            draw.polygon(screen, (255, 0, 0), targetted_box, 2)
 
         display.flip()
 

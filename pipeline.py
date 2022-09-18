@@ -3,11 +3,17 @@ import LingoVisionTTS
 import LingoVisionTranslator
 import textBoundsUI
 import threading
+import playAudio
+import time
 
 
 def pipeline(frame, coordinate, set_current_frame):
     def runner():
         language = 'ZH' #'EN-US'
+
+        set_current_frame(frame, coordinate)
+
+        playAudio.startSound()
 
         print('received frame of size', len(frame), 'and coordinates:', coordinate)
 
@@ -28,6 +34,12 @@ def pipeline(frame, coordinate, set_current_frame):
 
         # Freezeframe that is used for analysis
         set_current_frame(boxed_frame, coordinate)
+
+        if not text:
+            playAudio.errorSound()
+            time.sleep(0.5)
+            print('No text detected')
+            text = 'No text detected!'
 
         translated = LingoVisionTranslator.translateText(text, language)
 

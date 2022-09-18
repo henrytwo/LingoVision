@@ -6,7 +6,8 @@ def startSound():
 def errorSound():
     playsound("ErrorSound.mp3")
 
-startSound()
+if __name__ == '__main__':
+    startSound()
 
-print(7)
-errorSound()
+    print(7)
+    errorSound()
