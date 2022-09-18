@@ -10,8 +10,9 @@ import sys
 
 import adhawkapi
 import adhawkapi.frontend
-from adhawkapi import MarkerSequenceMode, PacketType
+from adhawkapi import Events, MarkerSequenceMode, PacketType
 
+DOUBLE_BLINK_DURATION = 0.5
 
 class EyeTracker:
     ''' Frontend communicating with the backend '''
@@ -34,12 +35,35 @@ class EyeTracker:
         # Tell the api that we wish to tap into the GAZE_IN_IMAGE data stream with the given callback as the handler
         self._api.register_stream_handler(PacketType.GAZE_IN_IMAGE, self.handle_gaze_in_image_stream)
 
+        self._api.register_stream_handler(PacketType.EVENTS, self._handle_event_stream)
+
         # Start the api and set its connection callback to self._handle_connect. When the api detects a connection to a
         # tracker, this function will be run.
         self._api.start(connect_cb=self._handle_connect_response)
 
         # Flags the frontend as not connected yet
         self.connected = False
+
+        self.gaze_coordinates = [0, 0]
+
+        self.last_blink = float('-inf')
+
+        self.trigger_pipeline = None
+
+    def _handle_event_stream(self, event_type, _timestamp, *_args):
+        ''' Prints event data to the console '''
+
+        # We discriminate between events based on their type
+        if event_type == Events.BLINK.value:
+            print(_timestamp, 'Blink!')
+
+            if _timestamp - self.last_blink < DOUBLE_BLINK_DURATION:
+                print(_timestamp - self.last_blink, 'Double Blink!')
+
+                if self.trigger_pipeline:
+                    self.trigger_pipeline()
+
+            self.last_blink = _timestamp
 
     def handle_video_stream(self, _gaze_timestamp, _frame_index, image_buf, _frame_timestamp):
         self.current_frame = image_buf
@@ -90,6 +114,10 @@ class EyeTracker:
         if not error:
             # Sets the GAZE_IN_IMAGE data stream rate to 125Hz
             self._api.set_stream_control(PacketType.GAZE_IN_IMAGE, 10, callback=(lambda *args: None))
+
+            # Tells the api which event streams we want to tap into. In this case, we wish to tap into the BLINK and
+            # SACCADE data streams.
+            self._api.set_event_control(adhawkapi.EventControlBit.BLINK, 1, callback=(lambda *_args: None))
 
             # Starts the tracker's camera so that video can be captured and sets self._handle_camera_start_response as
             # the callback. This function will be called once the api has finished starting the camera.

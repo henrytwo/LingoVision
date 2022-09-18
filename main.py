@@ -5,6 +5,7 @@ import sys
 import frontend
 import pipeline
 import eye_tracker
+import time
 
 def main():
     '''Main function'''
@@ -29,10 +30,12 @@ def main():
     ui.capture_image = capture_image
     tracker.handle_external_video_stream = ui.handle_video_stream
 
+    tracker.trigger_pipeline = capture_image
+
     try:
         print('Plug in your tracker and ensure AdHawk Backend is running.')
         while not ui.connected:
-            pass  # Waits for the frontend to be connected before proceeding
+            time.sleep(0.01)
     except (KeyboardInterrupt, SystemExit):
         print('Terminating')
         ui.close()

@@ -6,10 +6,15 @@ import threading
 import playAudio
 import time
 
+currently_running = False
 
 def pipeline(frame, coordinate, set_current_frame):
     def runner():
-        language = 'EN-US'
+        global currently_running
+
+        currently_running = True
+
+        language = 'ZH' #'EN-US'
 
         set_current_frame(frame, coordinate)
 
@@ -47,5 +52,10 @@ def pipeline(frame, coordinate, set_current_frame):
 
         LingoVisionTTS.textToSpeech(translated, language)
 
-    thread = threading.Thread(target=runner)
-    thread.start()
+        currently_running = False
+
+    if not currently_running:
+        thread = threading.Thread(target=runner)
+        thread.start()
+    else:
+        print('Already running - skipping command')
