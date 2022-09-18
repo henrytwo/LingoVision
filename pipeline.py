@@ -5,16 +5,34 @@ import textBoundsUI
 import threading
 import playAudio
 import time
+import firestore_stuff
+from firebase_admin import firestore
 
 currently_running = False
+language = 'EN-US'
+
+
+def on_snapshot(doc_snapshot, changes, read_time):
+    global language
+
+    for doc in doc_snapshot:
+        print(f'Received document snapshot: {doc.id}')
+
+    settings = doc_snapshot[0].to_dict()
+
+    language = settings['language']
+
+    print('Updated settings:', settings)
+
+db = firestore.client()
+db.collection(u'settings').document(u'setting').on_snapshot(on_snapshot)
+
 
 def pipeline(frame, coordinate, set_current_frame):
     def runner():
         global currently_running
 
         currently_running = True
-
-        language = 'ZH' #'EN-US'
 
         set_current_frame(frame, coordinate)
 
@@ -53,6 +71,15 @@ def pipeline(frame, coordinate, set_current_frame):
         LingoVisionTTS.textToSpeech(translated, language)
 
         currently_running = False
+
+        # Update databse
+        firestore_stuff.add_translation(
+            start_lang=source_language,
+            end_lang=language,
+            source_text=text,
+            translated_text=translated,
+            source_img=boxed_frame
+        )
 
     if not currently_running:
         thread = threading.Thread(target=runner)

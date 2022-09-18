@@ -7,3 +7,5 @@ google-cloud-texttospeech
 Pillow
 google-cloud-vision
 pygame
+firebase_admin
+google-cloud-firestore
