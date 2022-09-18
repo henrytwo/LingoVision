@@ -36,12 +36,17 @@ $(document).ready(() => {
 
         for (let item in items) {
             let data = items[item];
-            console.log(item)
+
+            var stuff = data['source_img'].toString().substring(12)
+
+            stuff = stuff.substring(0, stuff.length - 1)
+
 
             html += '<div class="border mx-2 greens rounded" style="text-align: left; padding: 10px; margin-bottom: 10px; background-color: #EFEFEF">' +
                 (new Date(data['timestamp'] * 1000)).toString() + '<hr/>' +
                 '<b>' + data['start_lang'] + ':</b> ' + data['source_text'] + '<hr>' +
-                '<b>' + data['end_lang'] + ':</b> ' + data['translated_text'] +
+                '<b>' + data['end_lang'] + ':</b> ' + data['translated_text'] + '<hr>' +
+                '<img src="' + 'data:image/jpeg;base64,' + stuff +  '" style="width: 100%">' +
                 '</div>'
         }
 
