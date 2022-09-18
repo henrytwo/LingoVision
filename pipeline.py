@@ -68,10 +68,6 @@ def pipeline(frame, coordinate, set_current_frame):
 
         print('Translated:', translated)
 
-        LingoVisionTTS.textToSpeech(translated, language)
-
-        currently_running = False
-
         # Update databse
         firestore_stuff.add_translation(
             start_lang=source_language,
@@ -80,6 +76,10 @@ def pipeline(frame, coordinate, set_current_frame):
             translated_text=translated,
             source_img=boxed_frame
         )
+
+        LingoVisionTTS.textToSpeech(translated, language)
+
+        currently_running = False
 
     if not currently_running:
         thread = threading.Thread(target=runner)
