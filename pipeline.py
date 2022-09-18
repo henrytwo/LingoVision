@@ -9,7 +9,7 @@ import time
 
 def pipeline(frame, coordinate, set_current_frame):
     def runner():
-        language = 'ZH' #'EN-US'
+        language = 'EN-US'
 
         set_current_frame(frame, coordinate)
 

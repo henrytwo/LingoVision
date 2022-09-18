@@ -89,7 +89,7 @@ class EyeTracker:
         # Starts the camera and sets the stream rate
         if not error:
             # Sets the GAZE_IN_IMAGE data stream rate to 125Hz
-            self._api.set_stream_control(PacketType.GAZE_IN_IMAGE, 125, callback=(lambda *args: None))
+            self._api.set_stream_control(PacketType.GAZE_IN_IMAGE, 10, callback=(lambda *args: None))
 
             # Starts the tracker's camera so that video can be captured and sets self._handle_camera_start_response as
             # the callback. This function will be called once the api has finished starting the camera.
