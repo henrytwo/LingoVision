@@ -64,7 +64,7 @@ def pipeline(frame, coordinate, set_current_frame):
             print('No text detected')
             text = 'No text detected!'
 
-        translated = LingoVisionTranslator.translateText(text, language)
+        translated, source_language = LingoVisionTranslator.translateText(text, language)
 
         print('Translated:', translated)
 

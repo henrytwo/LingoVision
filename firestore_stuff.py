@@ -18,11 +18,12 @@ def add_translation(start_lang, end_lang, source_text, translated_text, source_i
         u'end_lang': end_lang,
         u'source_text': source_text,
         u'translated_text': translated_text,
-        u'source_img': source_img,
         u'timestamp': time.time()
     }
 
     print('Updated Firebase record:', record)
+
+    record[u'source_img'] = source_img
 
     doc_ref.add(record)
 
