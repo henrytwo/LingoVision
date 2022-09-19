@@ -1,5 +1,11 @@
 # LingoVision
 
+## Update: We are a finalist of Hack the North 2022!
+
+Check out our Devpost submission here: https://devpost.com/software/lingovision
+
+<hr>
+
 Getting started:
 ```
 $ pip -r requirements.txt
